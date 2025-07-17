@@ -38,7 +38,8 @@ const Guest = () => {
       });
 
       const response = await fetch(
-        `http://localhost:5000/api/guests?${params}`
+        // `http://localhost:5000/api/guests?${params}`
+        `http://weddingserver-production.up.railway.app/api/guests?${params}`
       );
       const data = await response.json();
 

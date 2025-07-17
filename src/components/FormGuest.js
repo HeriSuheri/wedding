@@ -24,7 +24,7 @@ const FormGuest = () => {
     setIsLoading(true);
     try {
       // const response = await fetch("http://localhost:5000/api/rsvp", {
-      const response = await fetch("https://myweddingserver-herysuhery94.replit.app/api/rsvp", {
+      const response = await fetch("https://weddingserver-production.up.railway.app/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
