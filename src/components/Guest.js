@@ -64,12 +64,32 @@ const Guest = () => {
     setCurrentPage(1);
   }, [search, guestsPerPage, attendanceFilter]);
 
+  const visiblePages = [];
+  let startPage = Math.max(1, currentPage - 2);
+  let endPage = Math.min(totalPages, currentPage + 2);
+
+  // Jika dekat awal
+  if (currentPage <= 3) {
+    startPage = 1;
+    endPage = Math.min(5, totalPages);
+  }
+
+  // Jika dekat akhir
+  if (currentPage >= totalPages - 2) {
+    endPage = totalPages;
+    startPage = Math.max(1, totalPages - 4);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    visiblePages.push(i);
+  }
+
   if (loading) return <div className="text-center py-8">Memuat data...</div>;
   if (error)
     return <div className="text-red-500 text-center py-8">{error}</div>;
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div className="w-full mx-auto p-4">
       <h2 className="text-2xl font-bold text-wedding-gold mb-6">Daftar Tamu</h2>
 
       {/* <div className="flex justify-between mb-4">
@@ -109,36 +129,36 @@ const Guest = () => {
         />
       </div>
 
-      <div className="overflow-x-auto mb-4">
-        <table className="min-w-full bg-white rounded-lg overflow-hidden">
+      <div className="w-full overflow-x-auto mb-4">
+        <table className="table-fixed w-full bg-white rounded-lg overflow-hidden">
           <thead className="bg-wedding-blue text-white">
             <tr>
-              <th className="py-3 px-4 text-left">No</th>
-              <th className="py-3 px-4 text-left">Nama</th>
-              <th className="py-3 px-4 text-left">Konfirmasi</th>
-              <th className="py-3 px-4 text-left">Pesan</th>
+              <th className="w-[40px] px-2 py-3 text-left text-xs sm:text-sm">No</th>
+              <th className="w-[25%] px-2 py-3 text-left text-xs sm:text-sm">Nama</th>
+              <th className="w-[20%] px-2 py-3 text-left text-xs sm:text-sm">Konfirmasi</th>
+              <th className="px-2 py-3 text-left text-xs sm:text-sm">Pesan</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
             {guests.length > 0 ? (
               guests.map((guest, index) => (
                 <tr key={guest._id} className="hover:bg-gray-50">
-                  <td className="py-3 px-4">
+                  <td className="px-2 py-3">
                     {(currentPage - 1) * guestsPerPage + index + 1}
                   </td>
-                  <td className="py-3 px-4 font-medium">{guest.name}</td>
-                  <td className="py-3 px-4">
+                  <td className="px-2 py-3 font-medium text-xs sm:text-sm">{guest.name}</td>
+                  <td className="px-2 py-3 text-[10px] sm:text-sm">
                     {guest.attendance ? (
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs sm:text-sm font-medium">
                         Hadir
                       </span>
                     ) : (
-                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-red-100 text-red-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md sm:rounded-full font-medium">
                         Tidak Hadir
                       </span>
                     )}
                   </td>
-                  <td className="py-3 px-4 text-gray-600">
+                  <td className="px-2 py-3 text-gray-600 whitespace-normal break-words text-xs sm:text-sm">
                     {guest.message || "-"}
                   </td>
                 </tr>
@@ -192,8 +212,7 @@ const Guest = () => {
         </button>
       </div> */}
 
-      <div className="flex gap-1 items-center">
-        {/* Tombol Previous */}
+      {/* <div className="flex gap-1 items-center">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
@@ -202,7 +221,6 @@ const Guest = () => {
           &lt;
         </button>
 
-        {/* Halaman Pertama */}
         {currentPage > 3 && (
           <>
             <button
@@ -215,7 +233,6 @@ const Guest = () => {
           </>
         )}
 
-        {/* Halaman Sekitar Current */}
         {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
           let pageNum;
           if (currentPage <= 3) {
@@ -244,7 +261,6 @@ const Guest = () => {
           );
         })}
 
-        {/* Halaman Terakhir */}
         {currentPage < totalPages - 2 && (
           <>
             {currentPage < totalPages - 3 && <span className="px-1">...</span>}
@@ -257,7 +273,38 @@ const Guest = () => {
           </>
         )}
 
-        {/* Tombol Next */}
+        <button
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+          className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
+        >
+          &gt;
+        </button>
+      </div> */}
+
+      <div className="flex gap-1 items-center">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
+        >
+          &lt;
+        </button>
+        {visiblePages.map((pageNum) => (
+          <button
+            key={pageNum}
+            onClick={() => setCurrentPage(pageNum)}
+            className={`px-3 py-1 rounded ${
+              currentPage === pageNum
+                ? "bg-wedding-gold text-white"
+                : "bg-gray-200"
+            }`}
+          >
+            {pageNum}
+          </button>
+        ))}
         <button
           onClick={() =>
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
