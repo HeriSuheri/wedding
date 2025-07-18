@@ -1,0 +1,93 @@
+section {
+  scroll-margin-top: 80px;
+}
+
+
+#main {
+  min-height: 100vh;
+  /* min-width: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1); 
+  padding: 2rem;
+  text-align: center;
+  background-image: url('../../public/Couple.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#main main {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3); /* pink shadow */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+}
+
+#main h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #d63384; /* pink elegan */
+  margin-bottom: 1rem;
+}
+
+#main h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #c2185b; /* deep pink */
+  margin-bottom: 0.5rem;
+}
+
+#main h4 span {
+  font-weight: 600;
+  color: #e91e63; /* pink cerah */
+}
+
+#main p {
+  font-size: 1rem;
+  color: #ad1457; /* pink gelap */
+  margin-bottom: 2rem;
+}
+
+.simply-countdown {
+  margin: 1rem auto;
+}
+
+.simply-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.simply-countdown > .simply-section {
+  background-color: #f8bbd0;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #d63384;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #c2185b;
+}
