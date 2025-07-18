@@ -129,7 +129,7 @@ const Guest = () => {
         />
       </div>
 
-      <div className="w-full overflow-x-auto mb-4">
+      <div className="w-full overflow-x-auto mb-4 wrapper-table">
         <table className="table-fixed w-full bg-white rounded-lg overflow-hidden">
           <thead className="bg-wedding-blue text-white">
             <tr>

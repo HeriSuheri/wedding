@@ -28,3 +28,13 @@ code {
     font-size: 10px;
   }
 }
+
+
+@media screen and (max-width: 750px) {
+  .wrapper-table {
+    min-width: 200px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow-x: auto;
+  }
+}
