@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AOS from "aos";
 import FormGuest from "./components/FormGuest";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
@@ -24,6 +25,22 @@ function App() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = () => {
+      AOS.refreshHard(); // force AOS re-calculate posisi semua elemen
+    };
+
+    document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+      anchor.addEventListener("click", handleClick);
+    });
+
+    return () => {
+      document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+        anchor.removeEventListener("click", handleClick);
+      });
+    };
   }, []);
 
   return (

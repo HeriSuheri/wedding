@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../style/Home.css";
 import Guest from "./Guest";
 
 const FormGuest = () => {
@@ -24,7 +27,7 @@ const FormGuest = () => {
     setIsLoading(true);
     try {
       // const response = await fetch("http://localhost:5000/api/rsvp", {
-      const response = await fetch("https://weddingserver-production.up.railway.app/api/rsvp", {
+        const response = await fetch("https://weddingserver-production.up.railway.app/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -43,6 +46,14 @@ const FormGuest = () => {
   };
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false, // 🚀 Animasi bisa jalan tiap kali masuk viewport
+      mirror: true, // ✅ Trigger animasi saat scroll balik ke atas
+    });
+  }, []);
+
+  useEffect(() => {
     if (notification) {
       const timer = setTimeout(() => {
         setNotification(null);
@@ -53,11 +64,11 @@ const FormGuest = () => {
   }, [notification]);
 
   return (
-    <section id="form-guest">
+    <section id="form-guest" data-aos="fade-up">
       <div className="bg-blue-100 min-h-screen p-8">
         {/* Notification */}
         {notification && (
-          <div className="fixed top-4 right-4 z-50">
+          <div className="fixed top-4 right-4 z-50 notification-wrapper">
             <div
               className={`relative text-white px-4 py-3 pr-8 rounded-md shadow-lg ${
                 notification.includes("Error") ? "bg-red-500" : "bg-green-500"
@@ -83,15 +94,15 @@ const FormGuest = () => {
           </div>
         )}
 
-        <h1 className="text-3xl font-bold text-blue-800 text-center">
+        <h1 className="text-3xl font-bold text-blue-800 text-center" data-aos="fade-right" data-aos-delay="300">
           Konfirmasi kehadiran
         </h1>
-        <h1 className="animate-pulse text-wedding-gold text-center mt-2">
+        <h1 className="animate-pulse text-wedding-gold text-center mt-2" data-aos="fade-left" data-aos-delay="400">
           Kami Menunggu Kehadiran Anda!
         </h1>
 
         {/* Form RSVP */}
-        <div className="max-w-md mx-auto mt-6 bg-white p-6 rounded-lg shadow">
+        <div className="max-w-md mx-auto mt-6 bg-white p-6 rounded-lg shadow" data-aos="zoom-in" data-aos-delay="500">
           <input
             type="text"
             value={formData.name}
@@ -121,7 +132,7 @@ const FormGuest = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 mt-8 justify-center">
+        <div className="flex flex-wrap gap-4 mt-8 justify-center" data-aos="fade-up" data-aos-delay="500">
           <button
             onClick={handleRSVP}
             disabled={isLoading}

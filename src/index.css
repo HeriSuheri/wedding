@@ -22,7 +22,7 @@ code {
 }
 
 h1, h2, .judul-undangan {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Great Vibes';
   font-size: 2.5rem;
   /* text-align: center; */
   color: #5a3e2b;
@@ -30,7 +30,7 @@ h1, h2, .judul-undangan {
 }
 
 h3, p {
-  font-family: "Courier New",;
+  font-family: cursive;
   font-size: 1 rem;
   /* text-align: center; */
   color: #5a3e2b;
@@ -62,4 +62,8 @@ h3, p {
 #form-guest {
   scroll-margin-top: 30px;
   padding-top: 1rem;
+}
+
+.notification-wrapper {
+  z-index: 9999; 
 }
