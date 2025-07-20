@@ -6,7 +6,7 @@ const Main = (props) => {
   const enableScroll = () => {
     document.body.style.overflow = "auto";
   };
-//   props.showNav(false);
+  //   props.showNav(false);
 
   useEffect(() => {
     const countdownContainer = document.getElementById("countdown");
@@ -48,6 +48,7 @@ const Main = (props) => {
               target.scrollIntoView({ behavior: "smooth" });
             }
             props.showNav(true);
+            props.playAudio(); 
           }}
         >
           Lihat Undangan
