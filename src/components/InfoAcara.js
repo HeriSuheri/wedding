@@ -14,7 +14,7 @@ const InfoAcara = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 mt-10">Informasi Acara</h2>
+          <h2 className="text-2xl font-bold mb-4 mt-10" style={{ fontFamily: "'Great Vibes', cursive" }}>Informasi Acara</h2>
           <p
             className="mb-2"
             style={{ fontFamily: "'Dancing Script', cursive", color: "#5a3e2b"}}

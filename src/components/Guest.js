@@ -90,7 +90,7 @@ const Guest = () => {
 
   return (
     <div className="w-full mx-auto p-4">
-      <h2 className="text-2xl font-bold text-wedding-gold mb-6">Daftar Tamu</h2>
+      <h2 className="text-2xl font-bold text-wedding-gold mb-6" style={{ fontFamily: "'Great Vibes', cursive" }}>Daftar Tamu</h2>
 
       {/* <div className="flex justify-between mb-4">
         <select

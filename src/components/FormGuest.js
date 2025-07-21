@@ -94,10 +94,10 @@ const FormGuest = () => {
           </div>
         )}
 
-        <h1 className="text-3xl font-bold text-blue-800 text-center" data-aos="fade-right" data-aos-delay="300">
+        <h1 className="text-3xl font-bold text-blue-800 text-center" data-aos="fade-right" data-aos-delay="300" style={{ fontFamily: "'Great Vibes', cursive" }}>
           Konfirmasi kehadiran
         </h1>
-        <h1 className="animate-pulse text-wedding-gold text-center mt-2" data-aos="fade-left" data-aos-delay="400">
+        <h1 className="animate-pulse text-wedding-gold text-center mt-2" data-aos="fade-left" data-aos-delay="400" style={{ fontFamily: "'Great Vibes', cursive" }}>
           Kami Menunggu Kehadiran Anda!
         </h1>
 

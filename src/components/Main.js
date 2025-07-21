@@ -37,7 +37,7 @@ const Main = (props) => {
         <h4>
           Kepada <span>Bapak/Ibu/Saudara/i, </span>
         </h4>
-        <h1>Herry & Dedeh</h1>
+        <h1 style={{ fontFamily: "'Great Vibes', cursive" }}>Herry & Dedeh</h1>
         <p style={{ fontFamily: "'Dancing Script', cursive" }}>
           Akan melangsungkan resepsi pernikahan dalam:
         </p>

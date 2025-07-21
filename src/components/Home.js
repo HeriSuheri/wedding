@@ -66,6 +66,7 @@ const Home = () => {
           className="quote text-center italic font-bold text-4xl mt-10"
           data-aos="zoom-in-up"
           data-aos-delay="70"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
         >
           Assalamu'alaikum Wr. Wb.
         </h2>
@@ -138,7 +139,7 @@ const Home = () => {
 
       <div className="home-wrapper">
         <div className="intro-text">
-          <h2 data-aos="fade-down" data-aos-delay="90">
+          <h2 data-aos="fade-down" data-aos-delay="90" style={{ fontFamily: "'Great Vibes', cursive" }}>
             Acara Pernikahan
           </h2>
           {/* <div className="divider"></div> */}
