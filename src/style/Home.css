@@ -14,6 +14,8 @@ section {
 
 .home-wrapper {
   padding-top: 4.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
   /* background: linear-gradient(to bottom, #fff0f5, #ffe4e1); */
 }
 
