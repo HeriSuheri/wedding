@@ -43,10 +43,7 @@ const Main = (props) => {
         <button
           className="btn mt-4"
           onClick={() => {
-            const target = document.getElementById("home");
-            if (target) {
-              target.scrollIntoView({ behavior: "smooth" });
-            }
+            props.showUndangan();
             props.showNav(true);
             props.playAudio(); 
           }}

@@ -102,7 +102,7 @@ const FormGuest = () => {
         </h1>
 
         {/* Form RSVP */}
-        <div className="max-w-md mx-auto mt-6 bg-white p-6 rounded-lg shadow" data-aos="zoom-in" data-aos-delay="500">
+        <div className="max-w-md mx-auto mt-6 bg-white p-6 rounded-lg shadow" data-aos="zoom-in" data-aos-delay="400">
           <input
             type="text"
             value={formData.name}

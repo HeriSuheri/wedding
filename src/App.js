@@ -9,6 +9,7 @@ function App() {
   const [showNavbar, setShowNavbar] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [showDisc, setShowDisc] = useState(false);
+  const [showContent, setShowContent] = useState(false);
   const audioRef = useRef(null);
 
   // Function buat toggle audio manual via icon
@@ -36,6 +37,18 @@ function App() {
         .catch((e) => console.log("Autoplay blocked:", e));
     }
   };
+
+  const showUndangan = () => {
+    setShowContent(true);
+    setTimeout(() => {
+      const target = document.getElementById("home");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
+  };
+
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -85,9 +98,7 @@ function App() {
         >
           <span
             className={`text-xl ${
-              !isMuted
-                ? "text-red-500 animate-disc-motion" 
-                : "text-green-500" 
+              !isMuted ? "text-red-500 animate-disc-motion" : "text-green-500"
             }`}
           >
             {!isMuted ? "⏸️" : "▶️"}
@@ -95,14 +106,23 @@ function App() {
         </button>
       )}
       <main className="bg-blue-100 flex-grow">
-        <Main showNav={setShowNavbar} playAudio={playAudio} />
+        <Main
+          showNav={setShowNavbar}
+          playAudio={playAudio}
+          showUndangan={showUndangan}
+        />
         {showNavbar && <Navbar />}
-        <div id="home">
-          <Home />
-        </div>
-        <div id="form-guest">
-          <FormGuest />
-        </div>
+
+        {showContent && (
+          <>
+            <div id="home">
+              <Home />
+            </div>
+            <div id="form-guest">
+              <FormGuest />
+            </div>
+          </>
+        )}
       </main>
       <div className="bg-gray-100 h-20 flex items-center justify-center">
         <footer className="text-center text-xs text-gray-500 py-4">
