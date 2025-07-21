@@ -38,14 +38,16 @@ const Main = (props) => {
           Kepada <span>Bapak/Ibu/Saudara/i, </span>
         </h4>
         <h1>Herry & Dedeh</h1>
-        <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+        <p style={{ fontFamily: "'Dancing Script', cursive" }}>
+          Akan melangsungkan resepsi pernikahan dalam:
+        </p>
         <div id="countdown" className="simply-countdown"></div>
         <button
           className="btn mt-4"
           onClick={() => {
             props.showUndangan();
             props.showNav(true);
-            props.playAudio(); 
+            props.playAudio();
           }}
         >
           Lihat Undangan

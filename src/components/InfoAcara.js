@@ -15,7 +15,10 @@ const InfoAcara = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4 mt-10">Informasi Acara</h2>
-          <p className="mb-2">
+          <p
+            className="mb-2"
+            style={{ fontFamily: "'Dancing Script', cursive", color: "#5a3e2b"}}
+          >
             Alamat: Jl.Bojong Indah RT/RW 01/06 No.6 <br />
             Pondok kelapa, Duren Sawit - Jakarta Timur
           </p>
@@ -49,7 +52,10 @@ const InfoAcara = () => {
             Klik untuk membuka peta
           </a>
 
-          <p className="text-sm text-gray-600 mt-2">
+          <p
+            className="text-sm text-gray-600 mt-2"
+            style={{ fontFamily: "'Dancing Script', cursive", color: "#5a3e2b"}}
+          >
             Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di
             tujuan namun tidak ada tanda-tanda sedang dilangsungkan pernikahan,
             boleh jadi Anda salah jadwal, atau salah tempat.
@@ -60,7 +66,10 @@ const InfoAcara = () => {
         <div className="flex flex-col md:flex-row justify-center gap-8 mt-10">
           {/* Akad Nikah */}
           <div className="bg-gray-50 p-6 rounded-lg shadow text-center w-full md:w-1/2">
-            <h3 className="text-lg font-semibold mb-2 text-wedding-gold">
+            <h3
+              className="text-lg font-semibold mb-2 text-wedding-gold"
+              style={{ fontFamily: "'Dancing Script', cursive" }}
+            >
               Akad Nikah
             </h3>
             <div className="flex justify-around mb-4 font-semibold text-lg text-wedding-gold">
@@ -73,7 +82,10 @@ const InfoAcara = () => {
                 <span>Minggu, 10 Agustus 2025</span>
               </div>
             </div>
-            <p className="text-xs text-gray-600">
+            <p
+              className="text-xs text-gray-600"
+              style={{ fontFamily: "'Dancing Script', cursive" , color: "#5a3e2b"}}
+            >
               Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan
               kekhusyuan seluruh prosesi.
             </p>
@@ -81,7 +93,10 @@ const InfoAcara = () => {
 
           {/* Resepsi */}
           <div className="bg-gray-50 p-6 rounded-lg shadow text-center w-full md:w-1/2">
-            <h3 className="text-lg font-semibold mb-2 text-wedding-gold">
+            <h3
+              className="text-lg font-semibold mb-2 text-wedding-gold"
+              style={{ fontFamily: "'Dancing Script', cursive" }}
+            >
               Resepsi
             </h3>
             <div className="flex justify-around mb-4 font-semibold text-lg text-wedding-gold">
@@ -94,7 +109,10 @@ const InfoAcara = () => {
                 <span>Minggu, 10 Agustus 2025</span>
               </div>
             </div>
-            <p className="text-xs text-gray-600">
+            <p
+              className="text-xs text-gray-600"
+              style={{ fontFamily: "'Dancing Script', cursive" }}
+            >
               Mohon hadir dengan bahagia dan menjaga ketertiban demi kelancaran
               acara resepsi.
             </p>
