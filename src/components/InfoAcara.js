@@ -16,7 +16,7 @@ const InfoAcara = () => {
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4 mt-10">Informasi Acara</h2>
           <p className="mb-2">
-            Alamat: Jl.Bojong Indah RT/RW 01/06 No.6 <br/>
+            Alamat: Jl.Bojong Indah RT/RW 01/06 No.6 <br />
             Pondok kelapa, Duren Sawit - Jakarta Timur
           </p>
 
@@ -63,7 +63,7 @@ const InfoAcara = () => {
             <h3 className="text-lg font-semibold mb-2 text-wedding-gold">
               Akad Nikah
             </h3>
-            <div className="flex justify-around mb-4 text-sm">
+            <div className="flex justify-around mb-4 font-semibold text-lg text-wedding-gold">
               <div>
                 <i className="bi bi-clock block mb-1"></i>
                 <span>08.00 - 10.00</span>
@@ -84,7 +84,7 @@ const InfoAcara = () => {
             <h3 className="text-lg font-semibold mb-2 text-wedding-gold">
               Resepsi
             </h3>
-            <div className="flex justify-around mb-4 text-sm">
+            <div className="flex justify-around mb-4 font-semibold text-lg text-wedding-gold">
               <div>
                 <i className="bi bi-clock block mb-1"></i>
                 <span>11.00 - selesai</span>
