@@ -4,6 +4,7 @@ import FormGuest from "./components/FormGuest";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Home from "./components/Home";
+import InfoAcara from "./components/InfoAcara";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -117,6 +118,9 @@ function App() {
           <>
             <div id="home">
               <Home />
+            </div>
+            <div id="InfoAcara">
+              <InfoAcara />
             </div>
             <div id="form-guest">
               <FormGuest />

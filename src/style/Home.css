@@ -24,6 +24,11 @@ section {
   margin-bottom: 2.5rem;
 }
 
+.intro {
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+
 .couple-section {
   max-width: 800px;
   margin: auto;
