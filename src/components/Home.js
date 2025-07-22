@@ -144,7 +144,7 @@ const Home = () => {
           </h2>
           {/* <div className="divider"></div> */}
           <h3
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-delay="100"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
