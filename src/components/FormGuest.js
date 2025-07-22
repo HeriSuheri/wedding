@@ -4,14 +4,14 @@ import "aos/dist/aos.css";
 import "../style/Home.css";
 import Guest from "./Guest";
 
-const FormGuest = () => {
+const FormGuest = ({ setNotification }) => {
   const [showGuestList, setShowGuestList] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     attendance: true,
     message: "",
   });
-  const [notification, setNotification] = useState(null);
+  // const [notification, setNotification] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleShowGuests = () => {
@@ -27,11 +27,14 @@ const FormGuest = () => {
     setIsLoading(true);
     try {
       // const response = await fetch("http://localhost:5000/api/rsvp", {
-        const response = await fetch("https://weddingserver-production.up.railway.app/api/rsvp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://weddingserver-production.up.railway.app/api/rsvp",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       console.log("RESPONSE:", response);
       const data = await response.json();
       console.log("RESPONSE:", data);
@@ -40,6 +43,11 @@ const FormGuest = () => {
       setFormData({ name: "", attendance: true, message: "" });
     } catch (error) {
       setNotification(`Error: ${error.message}`);
+      setFormData({
+        name: "",
+        attendance: true,
+        message: "",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -53,31 +61,29 @@ const FormGuest = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (notification) {
-      const timer = setTimeout(() => {
-        setNotification(null);
-      }, 5000);
+  // useEffect(() => {
+  //   if (notification) {
+  //     const timer = setTimeout(() => {
+  //       setNotification(null);
+  //     }, 5000);
 
-      return () => clearTimeout(timer);
-    }
-  }, [notification]);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [notification]);
 
   return (
     <section id="form-guest" data-aos="fade-up">
       <div className="bg-blue-100 min-h-screen p-8">
         {/* Notification */}
-        {notification && (
+        {/* {notification && (
           <div className="fixed top-4 right-4 z-50 notification-wrapper">
             <div
               className={`relative text-white px-4 py-3 pr-8 rounded-md shadow-lg ${
                 notification.includes("Error") ? "bg-red-500" : "bg-green-500"
               }`}
             >
-              {/* Konten Notifikasi */}
               <div className="relative">
                 {notification}
-                {/* Tombol Close di pojok kanan atas teks */}
                 <button
                   onClick={() => setNotification(null)}
                   className="absolute -top-5 -right-8 text-white hover:text-gray-200 text-lg"
@@ -86,23 +92,36 @@ const FormGuest = () => {
                 </button>
               </div>
 
-              {/* Progress Bar */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
                 <div className="h-full bg-white animate-[progress_5s_linear_forwards]" />
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
-        <h1 className="text-3xl font-bold text-blue-800 text-center" data-aos="fade-right" data-aos-delay="300" style={{ fontFamily: "'Great Vibes', cursive" }}>
+        <h1
+          className="text-3xl font-bold text-blue-800 text-center"
+          data-aos="fade-right"
+          data-aos-delay="300"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
+        >
           Konfirmasi kehadiran
         </h1>
-        <h1 className="animate-pulse text-wedding-gold text-center mt-2" data-aos="fade-left" data-aos-delay="400" style={{ fontFamily: "'Great Vibes', cursive" }}>
+        <h1
+          className="animate-pulse text-wedding-gold text-center mt-2"
+          data-aos="fade-left"
+          data-aos-delay="400"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
+        >
           Kami Menunggu Kehadiran Anda!
         </h1>
 
         {/* Form RSVP */}
-        <div className="max-w-md mx-auto mt-6 bg-white p-6 rounded-lg shadow" data-aos="zoom-in" data-aos-delay="400">
+        <div
+          className="max-w-md mx-auto mt-6 bg-white p-6 rounded-lg shadow"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
           <input
             type="text"
             value={formData.name}
@@ -132,7 +151,11 @@ const FormGuest = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 mt-8 justify-center" data-aos="fade-up" data-aos-delay="500">
+        <div
+          className="flex flex-wrap gap-4 mt-8 justify-center"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <button
             onClick={handleRSVP}
             disabled={isLoading}

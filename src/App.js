@@ -11,6 +11,7 @@ function App() {
   const [isMuted, setIsMuted] = useState(true);
   const [showDisc, setShowDisc] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [notif, setNotif] = useState(null);
   const audioRef = useRef(null);
 
   // Function buat toggle audio manual via icon
@@ -49,7 +50,6 @@ function App() {
     }, 50);
   };
 
-
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -86,8 +86,41 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (notif) {
+      const timer = setTimeout(() => {
+        setNotif(null);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [notif]);
+
   return (
     <div className="flex flex-col min-h-screen">
+      {notif && (
+        <div className="fixed top-4 right-4 z-50 notification-wrapper">
+          <div
+            className={`relative text-white px-4 py-3 pr-8 rounded-md shadow-lg ${
+              notif.includes("Error") ? "bg-red-500" : "bg-green-500"
+            }`}
+          >
+            <div className="relative">
+              {notif}
+              <button
+                onClick={() => setNotif(null)}
+                className="absolute -top-5 -right-8 text-white hover:text-gray-200 text-lg"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+              <div className="h-full bg-white animate-[progress_5s_linear_forwards]" />
+            </div>
+          </div>
+        </div>
+      )}
       <audio ref={audioRef} muted={isMuted} loop>
         <source src="/audio/rahasia hati.mp3" type="audio/mp3" />
       </audio>
@@ -123,7 +156,7 @@ function App() {
               <InfoAcara />
             </div>
             <div id="form-guest">
-              <FormGuest />
+              <FormGuest setNotification={setNotif}/>
             </div>
           </>
         )}
