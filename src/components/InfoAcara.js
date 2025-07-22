@@ -17,7 +17,7 @@ const InfoAcara = () => {
           <h2 className="text-2xl font-bold mb-4 mt-10" style={{ fontFamily: "'Great Vibes', cursive" }}>Informasi Acara</h2>
           <p
             className="mb-2"
-            style={{ fontFamily: "'Dancing Script', cursive", color: "#5a3e2b"}}
+            style={{ fontFamily: "'Playfair Display', serif", color: "#5a3e2b"}}
           >
             Alamat: Jl.Bojong Indah RT/RW 01/06 No.6 <br />
             Pondok kelapa, Duren Sawit - Jakarta Timur
@@ -54,7 +54,7 @@ const InfoAcara = () => {
 
           <p
             className="text-sm text-gray-600 mt-2"
-            style={{ fontFamily: "'Dancing Script', cursive", color: "#5a3e2b"}}
+            style={{ fontFamily: "'Playfair Display', serif", color: "#5a3e2b"}}
           >
             Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di
             tujuan namun tidak ada tanda-tanda sedang dilangsungkan pernikahan,
@@ -68,7 +68,7 @@ const InfoAcara = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow text-center w-full md:w-1/2">
             <h3
               className="text-lg font-semibold mb-2 text-wedding-gold"
-              style={{ fontFamily: "'Dancing Script', cursive" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Akad Nikah
             </h3>
@@ -84,7 +84,7 @@ const InfoAcara = () => {
             </div>
             <p
               className="text-xs text-gray-600"
-              style={{ fontFamily: "'Dancing Script', cursive" , color: "#5a3e2b"}}
+              style={{ fontFamily: "'Playfair Display', serif" , color: "#5a3e2b"}}
             >
               Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan
               kekhusyuan seluruh prosesi.
@@ -95,7 +95,7 @@ const InfoAcara = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow text-center w-full md:w-1/2">
             <h3
               className="text-lg font-semibold mb-2 text-wedding-gold"
-              style={{ fontFamily: "'Dancing Script', cursive" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Resepsi
             </h3>
@@ -111,7 +111,7 @@ const InfoAcara = () => {
             </div>
             <p
               className="text-xs text-gray-600"
-              style={{ fontFamily: "'Dancing Script', cursive" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Mohon hadir dengan bahagia dan menjaga ketertiban demi kelancaran
               acara resepsi.

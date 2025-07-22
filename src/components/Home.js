@@ -36,7 +36,7 @@ const Home = () => {
             className="text-center text-xs italic text-gray-600"
             data-aos="zoom-in"
             data-aos-delay="200"
-            style={{ fontFamily: "'Dancing Script', cursive" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             “Cinta bukan saling menatap, tapi melihat ke arah yang sama.”
           </p>
@@ -44,7 +44,7 @@ const Home = () => {
             className="quote text-center italic mt-10"
             data-aos="zoom-in"
             data-aos-delay="100"
-            style={{ fontFamily: "'Dancing Script', cursive" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             "Dan di antara ayat-ayat-Nya ialah Dia menciptakan untukmu
             istri-istri dari jenismu sendiri, supaya kamu merasa nyaman
@@ -56,7 +56,7 @@ const Home = () => {
             className="quote text-center mt-5"
             data-aos="zoom-in"
             data-aos-delay="100"
-            style={{ fontFamily: "'Dancing Script', cursive" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Ar-Rum:21
           </p>
@@ -74,7 +74,7 @@ const Home = () => {
           className="quote text-center mt-5"
           data-aos="zoom-in-up"
           data-aos-delay="100"
-          style={{ fontFamily: "'Dancing Script', cursive" }}
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Tanpa mengurangi rasa hormat, perkenankan kami mengundang
           Bapak/Ibu/Saudara/i , serta kerabat sekalian, untuk menghadiri acara
@@ -88,10 +88,10 @@ const Home = () => {
               data-aos-delay="500"
             >
               <div className="text-end">
-                <h3 style={{ fontFamily: "'Dancing Script', cursive" }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif" }}>
                   Mempelai Laki
                 </h3>
-                <p style={{ fontFamily: "'Dancing Script', cursive" }}>
+                <p style={{ fontFamily: "'Playfair Display', serif" }}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
                   praesentium aut ipsa perferendis, incidunt soluta?
                   <br />
@@ -115,10 +115,10 @@ const Home = () => {
               data-aos-delay="700"
             >
               <div className="text-left">
-                <h3 style={{ fontFamily: "'Dancing Script', cursive" }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif" }}>
                   Mempelai Wanita
                 </h3>
-                <p style={{ fontFamily: "'Dancing Script', cursive" }}>
+                <p style={{ fontFamily: "'Playfair Display', serif" }}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
                   praesentium aut ipsa perferendis, incidunt soluta?
                   <br />
@@ -146,7 +146,7 @@ const Home = () => {
           <h3
             data-aos="fade-left"
             data-aos-delay="100"
-            style={{ fontFamily: "'Dancing Script', cursive" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Diselenggarakan pada 10 Agustus 2025 di Majalengka, Jawa Barat.
           </h3>

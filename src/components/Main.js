@@ -34,11 +34,11 @@ const Main = (props) => {
   return (
     <section id="main">
       <main>
-        <h4>
+        <h4 style={{ fontFamily: "'Playfair Display', serif" }}>
           Kepada <span>Bapak/Ibu/Saudara/i, </span>
         </h4>
         <h1 style={{ fontFamily: "'Great Vibes', cursive" }}>Herry & Dedeh</h1>
-        <p style={{ fontFamily: "'Dancing Script', cursive" }}>
+        <p style={{ fontFamily: "'Playfair Display', serif" }}>
           Akan melangsungkan resepsi pernikahan dalam:
         </p>
         <div id="countdown" className="simply-countdown"></div>
