@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Home from "./components/Home";
 import InfoAcara from "./components/InfoAcara";
+import Story from "./components/Story";
+import Gallery from "./components/Gallery";
+import Rsvp from "./components/Rsvp";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -155,9 +158,18 @@ function App() {
             <div id="InfoAcara">
               <InfoAcara />
             </div>
-            <div id="form-guest">
-              <FormGuest setNotification={setNotif}/>
+            <div id="story">
+              <Story />
             </div>
+            <div id="gallery">
+              <Gallery />
+            </div>
+            <div id="rsvp">
+              <Rsvp setNotification={setNotif}/>
+            </div>
+            {/* <div id="form-guest">
+              <FormGuest setNotification={setNotif}/>
+            </div> */}
           </>
         )}
       </main>

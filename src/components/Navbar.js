@@ -16,8 +16,11 @@ const Navbar = () => {
         <li>
           <a href="#gallery">Gallery</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#form-guest">RSVP</a>
+        </li> */}
+        <li>
+          <a href="#rsvp">RSVP</a>
         </li>
         <li>
           <a href="#gifts">Gifts</a>
