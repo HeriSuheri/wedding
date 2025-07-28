@@ -34,9 +34,9 @@ const RSVP = ({ setNotification }) => {
         ...(attendanceFilter !== "all" && { attendance: attendanceFilter }),
       });
 
-      //   const response = await fetch(
-      //     `http://localhost:5000/api/guests?${params}`
-      //   );
+      // const response = await fetch(
+      //   `http://localhost:5000/api/guests?${params}`
+      // );
 
       const response = await fetch(
         `https://weddingserver-production.up.railway.app/api/guests?${params}`
@@ -70,11 +70,11 @@ const RSVP = ({ setNotification }) => {
       // Simulasi delay 500ms
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      //   const response = await fetch("http://localhost:5000/api/rsvp", {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(formData),
-      //   });
+      // const response = await fetch("http://localhost:5000/api/rsvp", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(formData),
+      // });
 
       const response = await fetch(
         "https://weddingserver-production.up.railway.app/api/rsvp",
@@ -87,8 +87,12 @@ const RSVP = ({ setNotification }) => {
 
       const data = await response.json();
       setNotification("Konfirmasi berhasil dikirim !");
-      setFormData({ name: "", attendance: true, message: "" });
-      fetchGuests();
+      setFormData({ name: "", attendance: "", message: "" });
+      if (search) {
+        setSearch("");
+      } else {
+        fetchGuests();
+      }
     } catch (error) {
       setNotification(`Error: ${error.message}`);
       setFormData({
@@ -96,6 +100,7 @@ const RSVP = ({ setNotification }) => {
         attendance: "",
         message: "",
       });
+      setSearch("");
     } finally {
       setIsLoading(false);
     }

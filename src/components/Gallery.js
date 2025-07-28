@@ -65,10 +65,10 @@ const Gallery = () => {
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
-        speed={800}
+        speed={500}
       >
         {galleryImages.map((src, index) => (
           <SwiperSlide key={index}>

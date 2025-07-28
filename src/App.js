@@ -8,6 +8,7 @@ import InfoAcara from "./components/InfoAcara";
 import Story from "./components/Story";
 import Gallery from "./components/Gallery";
 import Rsvp from "./components/Rsvp";
+import Gifts from "./components/Gifts";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -166,6 +167,9 @@ function App() {
             </div>
             <div id="rsvp">
               <Rsvp setNotification={setNotif} />
+            </div>
+            <div id="gifts">
+              <Gifts />
             </div>
             {/* <div id="form-guest">
               <FormGuest setNotification={setNotif}/>

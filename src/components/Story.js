@@ -97,7 +97,7 @@ const Story = () => {
                 data-aos-delay="110"
               >
                 <div
-                  className={`relative max-w-lg p-5 shadow-md ${
+                  className={`relative max-w-lg p-5 shadow-md border border-gray-300 ${
                     index % 2 === 1
                       ? "ml-auto bg-white rounded-tl-3xl rounded-bl-3xl rounded-tr-md"
                       : "mr-auto bg-white rounded-tr-3xl rounded-br-3xl rounded-tl-md"
