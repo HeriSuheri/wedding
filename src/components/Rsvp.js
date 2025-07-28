@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const RSVP = ({ setNotification }) => {
   const [formData, setFormData] = useState({
@@ -110,6 +112,14 @@ const RSVP = ({ setNotification }) => {
     setCurrentPage(1);
   }, [search, guestsPerPage, attendanceFilter]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false, // 🚀 Animasi bisa jalan tiap kali masuk viewport
+      mirror: true, // ✅ Trigger animasi saat scroll balik ke atas
+    });
+  }, []);
+
   const visiblePages = [];
   let startPage = Math.max(1, currentPage - 2);
   let endPage = Math.min(totalPages, currentPage + 2);
@@ -132,11 +142,18 @@ const RSVP = ({ setNotification }) => {
 
   return (
     <section id="rsvp" className="py-16 px-4 bg-[#fff4f9] text-center">
-      <div className="max-w-3xl mx-auto">
+      <div
+        className="max-w-3xl mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <h2 className="text-3xl font-bold text-pink-500 mb-2">
           Konfirmasi Kehadiran
         </h2>
-        <p className="text-gray-600 mb-8">
+        <p
+          className="text-gray-600 font-bold mb-8"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
           Isi form di bawah ini untuk melakukan konfirmasi kehadiran.
         </p>
 
@@ -252,7 +269,10 @@ const RSVP = ({ setNotification }) => {
         <div className="mt-10 space-y-6 text-left">
           {/* Heading dan Search Input */}
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold text-gray-800">
+            <h3
+              className="text-xl font-semibold text-gray-800"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               Ucapan atau Do'a dari Tamu 💌
             </h3>
 

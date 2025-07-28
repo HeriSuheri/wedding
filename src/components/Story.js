@@ -1,4 +1,7 @@
 import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const timelineData = [
   {
@@ -25,16 +28,34 @@ const timelineData = [
 ];
 
 const Story = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false, // 🚀 Animasi bisa jalan tiap kali masuk viewport
+      mirror: true, // ✅ Trigger animasi saat scroll balik ke atas
+    });
+  }, []);
+
   return (
     <section id="story" className="py-16 px-4 bg-white relative">
       <div className="max-w-5xl mx-auto">
         {/* Text Header */}
-        <div className="text-center mb-16">
-          <span className="block text-sm text-wedding-gold mb-2">
+        <div
+          className="text-center mb-16"
+          data-aos="zoom-in-up"
+          data-aos-delay="50"
+        >
+          <h2 className="text-3xl font-bold text-pink-500">Cerita Kami</h2>
+          <span
+            className="block text-sm text-gray-500 font-bold mb-2"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Bagaimana Cinta Kami Bersemi
           </span>
-          <h2 className="text-3xl font-bold text-gray-700">Cerita Kami</h2>
-          <p className="text-gray-600 mt-4">
+          <p
+            className="text-gray-600 mt-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
             similique non soluta nulla asperiores voluptatem.
           </p>
@@ -53,7 +74,11 @@ const Story = () => {
               }`}
             >
               {/* Image */}
-              <div className="relative w-full md:w-[40%] h-[250px]">
+              <div
+                className="relative w-full md:w-[40%] h-[250px]"
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
                 <div
                   className="w-full h-full bg-center bg-cover shadow-md"
                   style={{ backgroundImage: `url(${item.image})` }}
@@ -67,6 +92,9 @@ const Story = () => {
                 className={`w-full md:w-[55%] relative ${
                   index % 2 === 1 ? "md:pl-12 md:items-end" : "md:pr-12"
                 }`}
+                style={{ fontFamily: "'Playfair Display', serif" }}
+                data-aos="fade-right"
+                data-aos-delay="110"
               >
                 <div
                   className={`relative max-w-lg p-5 shadow-md ${

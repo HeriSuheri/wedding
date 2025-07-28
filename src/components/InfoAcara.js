@@ -1,6 +1,17 @@
 import "../style/InfoAcara.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const InfoAcara = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false, // 🚀 Animasi bisa jalan tiap kali masuk viewport
+      mirror: true, // ✅ Trigger animasi saat scroll balik ke atas
+    });
+  }, []);
+
   return (
     <section
       id="infoAcara"
@@ -12,12 +23,24 @@ const InfoAcara = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="container mx-auto px-4">
+      <div
+        className="container mx-auto px-4"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 mt-10" style={{ fontFamily: "'Great Vibes', cursive" }}>Informasi Acara</h2>
+          <h2
+            className="text-2xl font-bold mb-4 mt-10"
+            style={{ fontFamily: "'Great Vibes', cursive" }}
+          >
+            Informasi Acara
+          </h2>
           <p
             className="mb-2"
-            style={{ fontFamily: "'Playfair Display', serif", color: "#5a3e2b"}}
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              color: "#5a3e2b",
+            }}
           >
             Alamat: Jl.Bojong Indah RT/RW 01/06 No.6 <br />
             Pondok kelapa, Duren Sawit - Jakarta Timur
@@ -54,7 +77,10 @@ const InfoAcara = () => {
 
           <p
             className="text-sm text-gray-600 mt-2"
-            style={{ fontFamily: "'Playfair Display', serif", color: "#5a3e2b"}}
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              color: "#5a3e2b",
+            }}
           >
             Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di
             tujuan namun tidak ada tanda-tanda sedang dilangsungkan pernikahan,
@@ -63,7 +89,11 @@ const InfoAcara = () => {
         </div>
 
         {/* Card Info */}
-        <div className="flex flex-col md:flex-row justify-center gap-8 mt-10">
+        <div
+          className="flex flex-col md:flex-row justify-center gap-8 mt-10"
+          // data-aos="fade-up"
+          // data-aos-delay="150"
+        >
           {/* Akad Nikah */}
           <div className="bg-gray-50 p-6 rounded-lg shadow text-center w-full md:w-1/2">
             <h3
@@ -84,7 +114,10 @@ const InfoAcara = () => {
             </div>
             <p
               className="text-xs text-gray-600"
-              style={{ fontFamily: "'Playfair Display', serif" , color: "#5a3e2b"}}
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                color: "#5a3e2b",
+              }}
             >
               Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan
               kekhusyuan seluruh prosesi.

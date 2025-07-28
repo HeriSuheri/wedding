@@ -165,7 +165,7 @@ function App() {
               <Gallery />
             </div>
             <div id="rsvp">
-              <Rsvp setNotification={setNotif}/>
+              <Rsvp setNotification={setNotif} />
             </div>
             {/* <div id="form-guest">
               <FormGuest setNotification={setNotif}/>
@@ -173,11 +173,77 @@ function App() {
           </>
         )}
       </main>
-      <div className="bg-gray-100 h-20 flex items-center justify-center">
-        <footer className="text-center text-xs text-gray-500 py-4">
-          &copy; 2025 Heri Wedding
-        </footer>
-      </div>
+      <footer className="bg-gray-400 text-gray-900 text-sm px-6 py-7">
+        {/* Copyright Tetap Tengah */}
+        <p className="w-full text-center text-xs mb-50">
+          &copy; 2025 Heri Wedding. All rights reserved.
+        </p>
+        <div className="mt-2 text-left text-md">
+          ✨ Design by Hery Suhery ✨
+        </div>
+        <div className="mt-2 text-left text-xs italic">
+          ingin undangan digital seperti ini ? <br />
+          Hubungi :
+        </div>
+        <div className="flex flex-col gap-2 md:flex-row md:justify-between items-center md:items-start mt-30">
+          {/* Icon Sosial Media: Selalu rata kiri */}
+          <div className="flex gap-4 text-xl w-full md:w-auto justify-start">
+            <a
+              href="https://wa.me/6285214210194"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-whatsapp hover:text-green-500 transition" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/herysuhery22/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-instagram hover:text-pink-600 transition" />
+            </a>
+
+            <a
+              href="https://github.com/HeriSuheri"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-github hover:text-gray-700 transition" />
+            </a>
+
+            <a
+              href="http://facebook.com/herry.ricardo.18"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-facebook-f hover:text-blue-600 transition" />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@herysuhery9158"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-youtube hover:text-red-600 transition" />
+            </a>
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-twitter hover:text-sky-600 transition" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/hery-suhery- 3b24ab1b8/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin-in hover:text-blue-500 transition" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
